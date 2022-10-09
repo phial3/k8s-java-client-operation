@@ -1,11 +1,10 @@
-package com.chenws.k8s;
+package com.phial3.k8s;
 
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Created by Vincent Chan on 2020/5/9
- */
+@EnableApolloConfig
 @SpringBootApplication
 public class K8sClientApplication {
 

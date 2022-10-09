@@ -1,16 +1,31 @@
-package com.chenws.k8s.deploy;
+package com.phial3.k8s.deploy;
 
-import io.kubernetes.client.ApiClient;
-import io.kubernetes.client.Configuration;
-import io.kubernetes.client.apis.AppsV1Api;
-import io.kubernetes.client.apis.CoreV1Api;
-import io.kubernetes.client.apis.ExtensionsV1beta1Api;
-import io.kubernetes.client.models.*;
+import io.kubernetes.client.openapi.ApiClient;
+import io.kubernetes.client.openapi.Configuration;
+import io.kubernetes.client.openapi.apis.AppsV1Api;
+import io.kubernetes.client.openapi.apis.CoreV1Api;
+import io.kubernetes.client.openapi.apis.NetworkingV1Api;
+import io.kubernetes.client.openapi.models.V1ConfigMap;
+import io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource;
+import io.kubernetes.client.openapi.models.V1Container;
+import io.kubernetes.client.openapi.models.V1Deployment;
+import io.kubernetes.client.openapi.models.V1HTTPIngressPath;
+import io.kubernetes.client.openapi.models.V1HTTPIngressRuleValue;
+import io.kubernetes.client.openapi.models.V1Ingress;
+import io.kubernetes.client.openapi.models.V1IngressRule;
+import io.kubernetes.client.openapi.models.V1IngressServiceBackend;
+import io.kubernetes.client.openapi.models.V1KeyToPath;
+import io.kubernetes.client.openapi.models.V1ObjectMeta;
+import io.kubernetes.client.openapi.models.V1PodTemplateSpec;
+import io.kubernetes.client.openapi.models.V1Service;
+import io.kubernetes.client.openapi.models.V1Volume;
 import io.kubernetes.client.util.Config;
 import io.kubernetes.client.util.Yaml;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +55,7 @@ public class DeployService {
     public void deploy() throws Exception {
         //load config
         String configPath = System.getProperty("user.dir") + File.separator + "kubeConfig" + File.separator;
-        ApiClient apiClient = Config.fromConfig(new FileInputStream(configPath + "config"));
+        ApiClient apiClient = Config.fromConfig(Files.newInputStream(Paths.get(configPath + "config")));
         Configuration.setDefaultApiClient(apiClient);
 
         //create deployment
@@ -89,7 +104,7 @@ public class DeployService {
             //config map's file name
             v1KeyToPath.setPath(CONFIG_JSON);
             //create
-            apiInstance.createNamespacedDeployment(DEFAULT_NAMESPACE, v1Deployment, null, null, null);
+            apiInstance.createNamespacedDeployment(DEFAULT_NAMESPACE, v1Deployment, null, null, null, null);
             return name;
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,7 +128,7 @@ public class DeployService {
 
             CoreV1Api api = new CoreV1Api();
             //create
-            api.createNamespacedService(DEFAULT_NAMESPACE, v1Service, null, null, null);
+            api.createNamespacedService(DEFAULT_NAMESPACE, v1Service, null, null, null, null);
             return serviceName;
         } catch (Exception e) {
             e.printStackTrace();
@@ -126,19 +141,21 @@ public class DeployService {
             CoreV1Api api = new CoreV1Api();
             Map<String, String> data = new HashMap<>();
             String configMapName = CONFIG_MAP_PREFIX + name;
+
             //key: file name, value: the text of file
             data.put(CONFIG_JSON, configJsonValue);
-            V1ConfigMap configMap = (new V1ConfigMapBuilder())
-                    .withApiVersion("v1")
-                    .withKind("ConfigMap")
-                    .withNewMetadata().withName(configMapName).withNamespace(DEFAULT_NAMESPACE)
-                    .endMetadata()
-                    .withData(data)
-                    .build();
+            V1ConfigMap configMap = (new V1ConfigMap())
+                    .apiVersion("v1")
+                    .kind("ConfigMap")
+                    .metadata(new V1ObjectMeta().name(configMapName).namespace(DEFAULT_NAMESPACE))
+                    .data(data);
+
             //delete old config map
-            api.deleteNamespacedConfigMap(configMapName, DEFAULT_NAMESPACE, null, null, null, null, true, null);
+            api.deleteNamespacedConfigMap(configMapName, DEFAULT_NAMESPACE, null, null, null, null, null, null);
+
             //create config map
-            api.createNamespacedConfigMap(DEFAULT_NAMESPACE, configMap, null, null, null);
+            api.createNamespacedConfigMap(DEFAULT_NAMESPACE, configMap, null, null, null, null);
+
             return configMapName;
         } catch (Exception e) {
             e.printStackTrace();
@@ -151,20 +168,19 @@ public class DeployService {
             ClassPathResource classPathResource = new ClassPathResource("ingress.yml");
             InputStream inputStream = classPathResource.getInputStream();
             Reader reader = new InputStreamReader(inputStream);
-            V1beta1Ingress v1beta1Ingress = (V1beta1Ingress) Yaml.load(reader);
+            V1Ingress v1Ingress = (V1Ingress) Yaml.load(reader);
             reader.close();
-            v1beta1Ingress.getMetadata().setName("ingress-service-deployment");
-            V1beta1IngressRule v1beta1IngressRule = v1beta1Ingress.getSpec().getRules().get(0);
-            V1beta1HTTPIngressRuleValue http = v1beta1IngressRule.getHttp();
-            V1beta1HTTPIngressPath v1beta1HTTPIngressPath = http.getPaths().get(0);
+            v1Ingress.getMetadata().setName("ingress-service-deployment");
+            V1IngressRule v1IngressRule = v1Ingress.getSpec().getRules().get(0);
+            V1HTTPIngressRuleValue http = v1IngressRule.getHttp();
+            V1HTTPIngressPath v1beta1HTTPIngressPath = http.getPaths().get(0);
             v1beta1HTTPIngressPath.setPath("/api/(/|$)(.*)");
-            v1beta1HTTPIngressPath.getBackend().setServiceName(serviceName);
-            ExtensionsV1beta1Api extensionsV1beta1Api = new ExtensionsV1beta1Api(apiClient);
-            extensionsV1beta1Api.createNamespacedIngress(DEFAULT_NAMESPACE, v1beta1Ingress, null, null, null);
+            v1beta1HTTPIngressPath.getBackend().setService(new V1IngressServiceBackend().name(serviceName));
+
+            NetworkingV1Api networkingV1Api = new NetworkingV1Api(apiClient);
+            networkingV1Api.createNamespacedIngress(DEFAULT_NAMESPACE, v1Ingress, null, null, null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
 }
