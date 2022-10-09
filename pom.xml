@@ -27,6 +27,11 @@
             <name>aliyun</name>
             <url>https://maven.aliyun.com/nexus/content/groups/public</url>
         </repository>
+        <repository>
+            <id>aliyunmaven</id>
+            <name>aliyun-maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
     </repositories>
 
     <dependencies>

@@ -6375,3 +6375,43 @@ Caused by: java.lang.RuntimeException: 构建K8s-Client异常
 2022-10-09 20:48:34.757 INFO  [main] com.phial3.k8s.K8sClientTest: Starting K8sClientTest using Java 17.0.4 on Yaffs-MacBook-Pro.local with PID 41752 (started by admin in /Users/admin/Workspace/java/github.com/k8s-java-client-operation)
 2022-10-09 20:48:34.758 INFO  [main] com.phial3.k8s.K8sClientTest: No active profile set, falling back to 1 default profile: "default"
 2022-10-09 20:48:35.270 INFO  [main] com.phial3.k8s.K8sClientTest: Started K8sClientTest in 1.008 seconds (JVM running for 1.567)
+2022-10-09 21:31:48.164 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: App ID is set to umeblockchain by app.id property from /META-INF/app.properties
+2022-10-09 21:31:48.165 WARN  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: app.label is not available from System Property and /META-INF/app.properties. It is set to null
+2022-10-09 21:31:48.167 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Loading /opt/settings/server.properties
+2022-10-09 21:31:48.167 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Environment is set to [UAT] by property 'env' in server.properties.
+2022-10-09 21:31:48.167 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Data Center is set to [dev] by property 'idc' in server.properties.
+2022-10-09 21:31:48.194 INFO  [main] com.ctrip.framework.apollo.internals.DefaultMetaServerProvider: Located meta services from apollo.meta configuration: http://172.24.86.23:8080/!
+2022-10-09 21:31:48.196 INFO  [main] com.ctrip.framework.apollo.core.MetaDomainConsts: Located meta server address http://172.24.86.23:8080/ for env UAT from com.ctrip.framework.apollo.internals.DefaultMetaServerProvider
+2022-10-09 21:31:48.259 INFO  [main] com.phial3.k8s.K8sClientTest: Starting K8sClientTest using Java 17.0.4 on Yaffs-MacBook-Pro.local with PID 47640 (started by admin in /Users/admin/Workspace/java/github.com/k8s-java-client-operation)
+2022-10-09 21:31:48.260 INFO  [main] com.phial3.k8s.K8sClientTest: No active profile set, falling back to 1 default profile: "default"
+2022-10-09 21:31:48.995 INFO  [main] com.phial3.k8s.K8sClientTest: Started K8sClientTest in 1.178 seconds (JVM running for 1.805)
+2022-10-09 21:34:11.463 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: App ID is set to umeblockchain by app.id property from /META-INF/app.properties
+2022-10-09 21:34:11.464 WARN  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: app.label is not available from System Property and /META-INF/app.properties. It is set to null
+2022-10-09 21:34:11.466 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Loading /opt/settings/server.properties
+2022-10-09 21:34:11.466 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Environment is set to [UAT] by property 'env' in server.properties.
+2022-10-09 21:34:11.466 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Data Center is set to [dev] by property 'idc' in server.properties.
+2022-10-09 21:34:11.494 INFO  [main] com.ctrip.framework.apollo.internals.DefaultMetaServerProvider: Located meta services from apollo.meta configuration: http://172.24.86.23:8080/!
+2022-10-09 21:34:11.496 INFO  [main] com.ctrip.framework.apollo.core.MetaDomainConsts: Located meta server address http://172.24.86.23:8080/ for env UAT from com.ctrip.framework.apollo.internals.DefaultMetaServerProvider
+2022-10-09 21:34:11.937 INFO  [main] com.phial3.k8s.K8sClientTest: Starting K8sClientTest using Java 17.0.4 on Yaffs-MacBook-Pro.local with PID 47929 (started by admin in /Users/admin/Workspace/java/github.com/k8s-java-client-operation)
+2022-10-09 21:34:11.937 INFO  [main] com.phial3.k8s.K8sClientTest: No active profile set, falling back to 1 default profile: "default"
+2022-10-09 21:34:12.575 INFO  [main] com.phial3.k8s.K8sClientTest: Started K8sClientTest in 1.5 seconds (JVM running for 2.076)
+2022-10-09 21:34:37.977 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: App ID is set to umeblockchain by app.id property from /META-INF/app.properties
+2022-10-09 21:34:37.977 WARN  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: app.label is not available from System Property and /META-INF/app.properties. It is set to null
+2022-10-09 21:34:37.979 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Loading /opt/settings/server.properties
+2022-10-09 21:34:37.979 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Environment is set to [UAT] by property 'env' in server.properties.
+2022-10-09 21:34:37.979 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Data Center is set to [dev] by property 'idc' in server.properties.
+2022-10-09 21:34:38.009 INFO  [main] com.ctrip.framework.apollo.internals.DefaultMetaServerProvider: Located meta services from apollo.meta configuration: http://172.24.86.23:8080/!
+2022-10-09 21:34:38.011 INFO  [main] com.ctrip.framework.apollo.core.MetaDomainConsts: Located meta server address http://172.24.86.23:8080/ for env UAT from com.ctrip.framework.apollo.internals.DefaultMetaServerProvider
+2022-10-09 21:34:38.495 INFO  [main] com.phial3.k8s.K8sClientTest: Starting K8sClientTest using Java 17.0.4 on Yaffs-MacBook-Pro.local with PID 47983 (started by admin in /Users/admin/Workspace/java/github.com/k8s-java-client-operation)
+2022-10-09 21:34:38.495 INFO  [main] com.phial3.k8s.K8sClientTest: No active profile set, falling back to 1 default profile: "default"
+2022-10-09 21:34:42.534 INFO  [main] com.phial3.k8s.K8sClientTest: Started K8sClientTest in 4.761 seconds (JVM running for 5.44)
+2022-10-09 22:28:08.848 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: App ID is set to umeblockchain by app.id property from /META-INF/app.properties
+2022-10-09 22:28:08.849 WARN  [main] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider: app.label is not available from System Property and /META-INF/app.properties. It is set to null
+2022-10-09 22:28:08.850 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Loading /opt/settings/server.properties
+2022-10-09 22:28:08.850 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Environment is set to [UAT] by property 'env' in server.properties.
+2022-10-09 22:28:08.850 INFO  [main] com.ctrip.framework.foundation.internals.provider.DefaultServerProvider: Data Center is set to [dev] by property 'idc' in server.properties.
+2022-10-09 22:28:08.873 INFO  [main] com.ctrip.framework.apollo.internals.DefaultMetaServerProvider: Located meta services from apollo.meta configuration: http://172.24.86.23:8080/!
+2022-10-09 22:28:08.874 INFO  [main] com.ctrip.framework.apollo.core.MetaDomainConsts: Located meta server address http://172.24.86.23:8080/ for env UAT from com.ctrip.framework.apollo.internals.DefaultMetaServerProvider
+2022-10-09 22:28:09.032 INFO  [main] com.phial3.k8s.K8sClientTest: Starting K8sClientTest using Java 17.0.4 on Yaffs-MacBook-Pro.local with PID 54594 (started by admin in /Users/admin/Workspace/java/github.com/k8s-java-client-operation)
+2022-10-09 22:28:09.033 INFO  [main] com.phial3.k8s.K8sClientTest: No active profile set, falling back to 1 default profile: "default"
+2022-10-09 22:28:09.825 INFO  [main] com.phial3.k8s.K8sClientTest: Started K8sClientTest in 1.194 seconds (JVM running for 1.851)
