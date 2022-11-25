@@ -1,5 +1,6 @@
 package com.phial3.k8s.deploy;
 
+import cn.hutool.core.util.StrUtil;
 import com.phial3.k8s.config.AppConfig;
 import io.kubernetes.client.openapi.ApiClient;
 import io.kubernetes.client.openapi.ApiException;
@@ -12,15 +13,14 @@ import io.kubernetes.client.util.ClientBuilder;
 import io.kubernetes.client.util.Config;
 import io.kubernetes.client.util.KubeConfig;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.IOException;
 import java.io.StringReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 @Slf4j
@@ -34,9 +34,16 @@ public class K8sClient {
     @Resource
     private AppConfig appConfig;
 
+    @Value("${k8s.server.enable-local}")
+    private Boolean enableLocal;
+
     @PostConstruct
     public void init() {
-        initK8sClient();
+        if (enableLocal) {
+            initLocalK8sConfig();
+        } else {
+            initRemoteK8sConfig();
+        }
     }
 
     public ApiClient getApiClient() {
@@ -55,7 +62,7 @@ public class K8sClient {
      * 构建集群外通过UA访问的客户端
      * loading the out-of-cluster config, a kubeconfig from file-system
      */
-    public void initK8sClient() {
+    public void initRemoteK8sConfig() {
         try {
             StringReader strReader = new StringReader(appConfig.getKubConfigYaml());
             this.apiClient = ClientBuilder.kubeconfig(KubeConfig.loadKubeConfig(strReader)).build();
@@ -68,15 +75,20 @@ public class K8sClient {
         }
     }
 
-    public void loadLocalKubeConfig() throws IOException {
-        //load local config
-        String configPath = System.getProperty("user.dir") + File.separator + "kubeConfig" + File.separator;
-        ApiClient apiClient = Config.fromConfig(Files.newInputStream(Paths.get(configPath + "config")));
-        Configuration.setDefaultApiClient(apiClient);
+    public void initLocalK8sConfig() {
+        try {
+            //load local config
+            String kubeConfigPath = "/Users/admin/.kube/config";
+            ApiClient apiClient = Config.fromConfig(kubeConfigPath);
+            Configuration.setDefaultApiClient(apiClient);
 
-        this.apiClient = apiClient;
-        this.coreV1Api = new CoreV1Api(apiClient);
-        this.appsV1Api = new AppsV1Api(apiClient);
+            this.apiClient = apiClient;
+            this.coreV1Api = new CoreV1Api(apiClient);
+            this.appsV1Api = new AppsV1Api(apiClient);
+        } catch (Exception e) {
+            log.error("initLocalKubeConfig error.", e);
+            throw new RuntimeException("initLocalKubeConfig error", e);
+        }
     }
 
 
@@ -88,5 +100,27 @@ public class K8sClient {
             log.error("getPodList error " + e.getResponseBody(), e);
         }
         return null;
+    }
+
+    public String getAppServerLogs(int startDate,String namespace,String podName,String endLog){
+        try {
+            int now = (int) LocalDateTime.now().toEpochSecond(ZoneOffset.of("+8"));
+            // 加 5 秒防止日志丢失
+            int i =  now - startDate + 5;
+
+            String logContent = coreV1Api.readNamespacedPodLog(podName, namespace, null, null, null, null, "true", null, i, null, null);
+
+            // 去除重复日志
+            if(StrUtil.isNotBlank(endLog)){
+                int end = logContent.indexOf(endLog);
+                if(end!=-1){
+                    logContent = StrUtil.removePrefix(logContent.substring(end),endLog);
+                }
+            }
+            return logContent;
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

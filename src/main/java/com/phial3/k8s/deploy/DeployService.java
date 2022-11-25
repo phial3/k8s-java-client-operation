@@ -16,7 +16,6 @@ import io.kubernetes.client.openapi.models.V1KeyToPath;
 import io.kubernetes.client.openapi.models.V1ObjectMeta;
 import io.kubernetes.client.openapi.models.V1PodTemplateSpec;
 import io.kubernetes.client.openapi.models.V1Service;
-import io.kubernetes.client.openapi.models.V1Status;
 import io.kubernetes.client.openapi.models.V1Volume;
 import io.kubernetes.client.util.Yaml;
 import lombok.extern.slf4j.Slf4j;
@@ -42,10 +41,9 @@ public class DeployService {
 
     private final static String LABEL_KEY = "app";
 
-    private final static String CONFIG_MAP_PREFIX = "configMap-";
+    private final static String CONFIG_MAP_PREFIX = "configmap-";
 
     private final static String CONFIG_JSON_VALUE = "{}";
-
 
     @Resource
     private K8sClient k8sClient;
@@ -61,7 +59,7 @@ public class DeployService {
      */
     public void deploy() throws Exception {
         //create deployment
-        V1Deployment deployment = createDeployment(CONFIG_JSON_VALUE, "deployment-name", "");
+        V1Deployment deployment = createDeployment(CONFIG_JSON_VALUE, "deployment-name", "app-1-test", "docker-boot:1.0");
 
         //create service
         V1Service service = createService(deployment.getMetadata().getName(), "service-name");
@@ -72,13 +70,12 @@ public class DeployService {
         log.info("deploy successful! deployment:{}, service:{}, ingress:{}", deployment, service, ingress);
     }
 
-    public V1Deployment createDeployment(String configJsonValue, String deploymentName, String targetImage) {
+    public V1Deployment createDeployment(String configJsonValue, String deploymentName, String configName, String targetImage) {
         try {
             V1Deployment v1Deployment = (V1Deployment) loadConfigResource("deployment.yml");
-            AppsV1Api apiInstance = k8sClient.getAppsV1Api();
 
             //create config map
-            V1ConfigMap v1ConfigMap = createConfigMap(configJsonValue, deploymentName);
+            V1ConfigMap v1ConfigMap = createConfigMap(configJsonValue, configName);
             String configMapName = v1ConfigMap.getMetadata().getName();
 
             //config the deployment
@@ -104,10 +101,12 @@ public class DeployService {
             v1KeyToPath.setKey(CONFIG_JSON);
             //config map's file name
             v1KeyToPath.setPath(CONFIG_JSON);
+
             //create
+            AppsV1Api apiInstance = k8sClient.getAppsV1Api();
             return apiInstance.createNamespacedDeployment(DEFAULT_NAMESPACE, v1Deployment, null, null, null, null);
         } catch (Exception e) {
-            log.error("createDeployment error!", e);
+            log.error("createDeployment error:{}", e.getMessage(), e);
             throw new RuntimeException("createDeployment error!", e);
         }
     }
@@ -125,7 +124,8 @@ public class DeployService {
             //create
             return api.createNamespacedService(DEFAULT_NAMESPACE, v1Service, null, null, null, null);
         } catch (Exception e) {
-            log.error("createService error!", e);
+            log.error("createService error:{}", e.getMessage(), e);
+            e.printStackTrace();
             throw new RuntimeException("createService error!", e);
         }
     }
@@ -133,31 +133,32 @@ public class DeployService {
     private V1ConfigMap createConfigMap(String configJsonValue, String name) {
         try {
             Map<String, String> dataMap = new HashMap<>();
-            String configMapName = CONFIG_MAP_PREFIX + name;
+            //String configMapName = CONFIG_MAP_PREFIX + name;
 
             //key: file name, value: the text of file
             dataMap.put(CONFIG_JSON, configJsonValue);
             V1ConfigMap configMap = (new V1ConfigMap())
                     .apiVersion("v1")
                     .kind("ConfigMap")
-                    .metadata(new V1ObjectMeta().name(configMapName).namespace(DEFAULT_NAMESPACE))
+                    .metadata(new V1ObjectMeta().name(name).namespace(DEFAULT_NAMESPACE))
                     .data(dataMap);
 
             CoreV1Api coreV1Api = k8sClient.getCoreV1Api();
 
             //delete old config map
-            V1Status status = coreV1Api.deleteNamespacedConfigMap(configMapName, DEFAULT_NAMESPACE, null, null,
-                    null, null, null, null);
-            if (status.getCode() != 0 || status.getCode() != 200) {
-                // error
-                log.error("deleteNamespacedConfigMap error");
-                throw new RuntimeException("deleteNamespacedConfigMap error");
-            }
+//            V1Status status = coreV1Api.deleteNamespacedConfigMap(configMapName, DEFAULT_NAMESPACE, null, null,
+//                    null, null, null, new V1DeleteOptions());
+//            if (status != null && (status.getCode() != 0 || status.getCode() != 200)) {
+//                // error
+//                log.error("deleteNamespacedConfigMap error");
+//                throw new RuntimeException("deleteNamespacedConfigMap error");
+//            }
 
             //create config map
             return coreV1Api.createNamespacedConfigMap(DEFAULT_NAMESPACE, configMap, null, null, null, null);
         } catch (Exception e) {
-            log.error("createConfigMap error!", e);
+            log.error("createConfigMap error:{}", e.getMessage(), e);
+            e.printStackTrace();
             throw new RuntimeException("createConfigMap error!", e);
         }
     }
@@ -176,7 +177,8 @@ public class DeployService {
             NetworkingV1Api networkingV1Api = new NetworkingV1Api(k8sClient.getApiClient());
             return networkingV1Api.createNamespacedIngress(DEFAULT_NAMESPACE, v1Ingress, null, null, null, null);
         } catch (Exception e) {
-            log.error("createIngress {} error!", serviceName, e);
+            log.error("createIngress {} error:{}", serviceName, e.getMessage(), e);
+            e.printStackTrace();
             throw new RuntimeException("createIngress error!", e);
         }
     }

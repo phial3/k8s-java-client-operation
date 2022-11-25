@@ -2,6 +2,7 @@ package com.phial3.k8s.config;
 
 import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.ConfigService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,8 +12,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ApolloEnvConfig {
 
-    public static final String source = "Umetrip";
-
     public static final String apolloName = "BaaS.Chainmaker";
 
     public static final String baasListName = "baas";
@@ -21,6 +20,8 @@ public class ApolloEnvConfig {
 
     protected Map<String, Config> baasConfig = new ConcurrentHashMap<>();
 
+    @Value("${baas-source}")
+    public String source;
 
     @PostConstruct
     public void init() {
