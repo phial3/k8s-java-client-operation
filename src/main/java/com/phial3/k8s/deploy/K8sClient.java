@@ -23,6 +23,24 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.List;
 
+/**
+ * Pod有以下几个状态:
+ * Pending: 等待中
+ * Pod已经被创建，但还没有完成调度，或者说有一个或多个镜像正处于从远程仓库下载的过程。
+ * 处在这个阶段的Pod可能正在写数据到etcd中、调度、pull镜像或启动容器。
+ * <p>
+ * Running: 运行中
+ * 该 Pod 已经绑定到了一个节点上，Pod 中所有的容器都已被创建。至少有一个容器正在运行，或者正处于启动或重启状态。
+ * <p>
+ * Succeeded:  正常终止
+ * Pod中的所有的容器已经正常的执行后退出，并且不会自动重启，一般会是在部署job的时候会出现。
+ * <p>
+ * Failed: 异常停止
+ * Pod 中的所有容器都已终止了，并且至少有一个容器是因为失败终止。也就是说，容器以非0状态退出或者被系统终止。
+ * <p>
+ * Unkonwn: 未知状态
+ * API Server无法正常获取到Pod对象的状态信息，通常是由于其无法与所在工作节点的kubelet通信所致。
+ */
 @Slf4j
 @Component
 public class K8sClient {
