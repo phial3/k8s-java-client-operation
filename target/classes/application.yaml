@@ -1,0 +1,18 @@
+server:
+  port: 9995
+
+spring:
+  application:
+    name: k8s-java-client-operation
+
+apollo:
+  bootstrap:
+    enabled: false
+
+k8s:
+  server:
+    enable-local: true # 是否启用本地k8s,为false使用Apollo配置
+
+schedule-task-enabled: true
+schedule-interval-milliseconds: 1000
+baas-source: Umetrip

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="251ea693-be0a-4955-af5f-c780e3766e4f" name="Changes" comment="update" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="docker-desktop" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="7sxuxh14" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="disabledProfiles">
+      <list>
+        <option value="umetrip-repo" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2FsXtNPQaNy6RD0YNOFbkz8ZcH3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/admin/Workspace/java/github.com/k8s-java-client-operation/src/main/resources&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d70582e557d38256f0c6ad9b50374a8d&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/phial3/k8s/config" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/phial3" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/phial3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.K8sClientApplication">
+    <configuration name="K8sClientTest.TestDeployPod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="k8s-java-client-operation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.phial3.k8s.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.phial3.k8s" />
+      <option name="MAIN_CLASS_NAME" value="com.phial3.k8s.K8sClientTest" />
+      <option name="METHOD_NAME" value="TestDeployPod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="K8sClientTest.TestPodList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="k8s-java-client-operation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.phial3.k8s.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.phial3.k8s" />
+      <option name="MAIN_CLASS_NAME" value="com.phial3.k8s.K8sClientTest" />
+      <option name="METHOD_NAME" value="TestPodList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="K8sClientTest.testPodList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="k8s-java-client-operation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.phial3.k8s.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.phial3.k8s" />
+      <option name="MAIN_CLASS_NAME" value="com.phial3.k8s.K8sClientTest" />
+      <option name="METHOD_NAME" value="testPodList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="K8sClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="k8s-java-client-operation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.phial3.k8s.K8sClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.K8sClientTest.TestDeployPod" />
+        <item itemvalue="JUnit.K8sClientTest.TestPodList" />
+        <item itemvalue="JUnit.K8sClientTest.testPodList" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="251ea693-be0a-4955-af5f-c780e3766e4f" name="Changes" comment="" />
+      <created>1665281978612</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665281978612</updated>
+      <workItem from="1665281979943" duration="23000" />
+      <workItem from="1665282008159" duration="1409000" />
+      <workItem from="1665298503065" duration="49000" />
+      <workItem from="1665306350976" duration="667000" />
+      <workItem from="1665307024958" duration="368000" />
+      <workItem from="1665307400647" duration="3316000" />
+      <workItem from="1665315513166" duration="13540000" />
+      <workItem from="1665365732336" duration="4400000" />
+      <workItem from="1665452028698" duration="2113000" />
+      <workItem from="1665993739785" duration="215000" />
+      <workItem from="1669381976861" duration="1662000" />
+    </task>
+    <task id="LOCAL-00001" summary="add apollo">
+      <created>1665320063123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665320063123</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1665329853144</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665329853144</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1669383556753</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669383556753</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add apollo" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/phial3/k8s/K8sClientTest.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
