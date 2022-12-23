@@ -5,56 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="251ea693-be0a-4955-af5f-c780e3766e4f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/otherdays/web-2022-11-25-0.log.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/Container.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/FabricContainerEnvConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/FabricDeployment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/LocalVolume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/RandomGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/orderer/OrdererDeployment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/fabric/peer/PeerDeployment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/K8sClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/K8sClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/bean/AppInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/bean/AppInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/bean/InstanceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/bean/InstanceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/bean/ServiceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/bean/ServiceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/config/ApolloEnvConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/config/ApolloEnvConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/DeployService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/deploy/DeployService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/k8s/deploy/K8sClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/k8s/deploy/K8sClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/KubemonApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/KubemonApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/ahc/AhcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/ahc/AhcClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/ahc/AhcClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/ahc/AhcClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/ahc/Json.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/ahc/Json.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/cache/CachePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/cache/CachePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/cache/DemoCachePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/cache/DemoCachePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/config/ClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/config/ClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/function/CompletableFutureUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/function/CompletableFutureUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/function/F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/function/F.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/function/SplitCollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/function/SplitCollections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/function/ThrowingFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/function/ThrowingFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/metrics/KubernetesMetricsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/metrics/KubernetesMetricsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/metrics/NodeDataFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/metrics/NodeDataFull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/metrics/NodeDataSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/metrics/NodeDataSimple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/metrics/PodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/metrics/PodData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/metrics/QuantityAccumulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/metrics/QuantityAccumulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/proxy/Delegator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/proxy/Delegator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/statistics/Statistics2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/statistics/Statistics2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/statistics/Statistics3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/statistics/Statistics3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/statistics/Statistics4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/statistics/Statistics4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/phial3/kubemon/thread/ThreadPools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/phial3/kubemon/thread/ThreadPools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ingress.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ingress.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/phial3/k8s/K8sClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/phial3/k8s/K8sClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/phial3/kubemon/ahc/AhcClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/phial3/kubemon/ahc/AhcClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/phial3/kubemon/ahc/AhcTestBootStrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/phial3/kubemon/ahc/AhcTestBootStrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/phial3/kubemon/statistics/StatisticsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/phial3/kubemon/statistics/StatisticsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/phial3/kubemon/thread/TestStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/phial3/kubemon/thread/TestStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +217,7 @@
       <workItem from="1669381976861" duration="1866000" />
       <workItem from="1669383919765" duration="98000" />
       <workItem from="1669384690253" duration="837000" />
-      <workItem from="1671759438266" duration="6579000" />
+      <workItem from="1671759438266" duration="8898000" />
     </task>
     <task id="LOCAL-00001" summary="add apollo">
       <created>1665320063123</created>
@@ -310,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669385707211</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <created>1671778517244</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671778517244</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
