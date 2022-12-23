@@ -10,7 +10,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.phial3.k8s</groupId>
+    <groupId>org.phial3.k8s</groupId>
     <artifactId>k8s-java-client-demo</artifactId>
     <version>1.0.0</version>
     <name>k8s-java-client-operation</name>
@@ -20,8 +20,8 @@
         <hutool.version>5.8.10</hutool.version>
         <apollo.version>2.0.1</apollo.version>
         <caffeine.version>2.9.3</caffeine.version>
-        <fastjson.version>2.0.19</fastjson.version>
-        <protobuf-java.version>3.21.9</protobuf-java.version>
+        <fastjson.version>2.0.20</fastjson.version>
+        <protobuf-java.version>3.21.12</protobuf-java.version>
         <k8s-client.version>16.0.2</k8s-client.version>
     </properties>
 
